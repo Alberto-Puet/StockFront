@@ -16,7 +16,7 @@ export default function About() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/v1/products", product);
+      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/products`, product);
       setProduct({ name: "", price: "" });
     } catch (error) {
       console.error("Error al crear producto:", error);
